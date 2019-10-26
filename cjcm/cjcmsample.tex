@@ -1,0 +1,118 @@
+%& -bibtex
+%
+% $Id: cjcmsample.tex,v 1.5 2007/06/05 02:59:29 zlb Exp $
+
+% 文档类选项：
+%	final	- 终稿模式
+%	jssx	- 《计算数学》(缺省)
+%	szjs	- 《数值计算与计算机应用》
+\documentclass[final,jssx]{cjcmltx}
+\begin{document}
+
+\def\Jvol{??}
+\def\Jno{?}
+\def\Jyear{200?}
+\def\Jmonth{1}
+\def\Jreceived{2007年6月5日}
+\def\Jrevised{}
+\setcounter{page}{1}
+
+%------------------------ 中文标题、摘要 --------------------------
+
+\markright{徐国良~等: 计算几何中几何偏微分方程的构造}
+
+\title{计算几何中几何偏微分方程的构造
+	\thanks{国家自然科学基金(10371130)和中国国家重点基础研究发
+                展计划(2004CB318000)资助项目.}}
+
+\author{徐国良\affiliation{LSEC, 中国科学院, 数学与系统科学研究院,
+                         计算数学研究所, 北京~100080}
+	\and
+	张　琴\affiliation{LSEC, 中国科学院, 数学与系统科学研究院,
+                           计算数学研究所, 北京~100080;\\
+                    北京信息科技大学, 基础课教学部, 北京~100085}}
+
+\maketitle
+
+\begin{abstract}
+平均曲率流、 曲面扩散流和 Willmore 流等著名的几何流除了在理论方面有重要
+的意义之外, 在计算机辅助几何设计、计算机图形学以及图像处理等领域也得到了
+广泛的应用. 然而在解决实际问题时, 人们经常要根据问题的特点构造其它具有指
+定性质的几何流. 本文从统一的观点出发, 对于参数曲面以及水平集曲面, 给出了
+几类重要几何偏微分方程(包括$L^2$梯度流、$H^{-1}$梯度流以及$H^{-2}$ 梯度
+流)的构造. 这几类几何流的包容十分广泛, 上述提到的几个几何流均为其特例.
+\end{abstract}
+
+\begin{keywords}
+计算几何, 能量泛函, 梯度下降流, 欧拉--拉格朗日算子
+\end{keywords}
+
+\begin{classification}
+65D17
+\end{classification}
+
+%------------------------ 英文标题、摘要 --------------------------
+
+\title{CONSTRUCTION OF GEOMETRIC PARTIAL DIFFERENTIAL EQUATIONS IN
+       COMPUTATIONAL GEOMETRY}
+
+\author{Xu Guoliang
+	\thanks{LSEC, Institute of Computational Mathematics, Academy of
+                Mathematics and System Sciences, Chinese Academy of
+                Sciences, Beijing 100080, China}
+        \and
+	Zhang Qin
+        \thanks{LSEC, Institute of Computational Mathematics,  Academy of
+                Mathematics and System Sciences, Chinese Academy of
+                Sciences, Beijing 100080,  China;\\
+                Department of Basic Courses, Beijing Information Science and
+                Technology University, Beijing 100085, China}}
+
+\maketitle
+
+\begin{abstract}
+It is well-known that  mean curvature flow, surface diffusion flow
+and Willmore flow have played important roles in the field of
+geometry analysis. They are also widely used in the fields of
+computer aided geometric design, computer graphics and image
+processing. However, in the real applications one often needs to
+construct various different flows according to the specific
+requirements of the problems to be solved. In this paper, we propose
+a generic framework for constructing geometric partial differential
+equations, including $L^2$, $H^{-1}$ and $H^{-2}$ gradient flows.
+These flows are general, which contain mean curvature flow, surface
+diffusion flow and Willmore flow as their special cases.
+\end{abstract}
+
+\begin{keywords}
+computational geometry, energy
+functional, gradient descent flow, Euler--Lagrange operator
+\end{keywords}
+
+\begin{classification}
+65D17
+\end{classification}
+
+\section{引　　言}
+
+几何流作为一类重要的几何偏微分方程 ....
+
+\section{预备知识}
+
+本节概述下文中用到的符号和基本知识 ....
+
+\section{参数曲面的梯度下降流}
+
+首先考虑一个经典的极小化问题 ....
+
+\begin{thebibliography}{00}
+% 参考文献著录规则采用 BG/T 7714-2005 标准.
+% 文献类型标志: 普通图书M; 会议录C; 汇编G; 报纸N; 期刊J; 学位论文D;
+%               报告R; 标准S; 专利P; 数据库DB; 计算机程序CP; 电子公告EB。
+% 电子文献载体类型标志: 磁带MT; 磁盘DK; 光盘CD; 联机网络OL。
+
+
+\bibitem{} ....
+
+\end{thebibliography}
+\end{document}
