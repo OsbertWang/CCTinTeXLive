@@ -25,6 +25,6 @@
 
 改 `\documentclass[twoside]{cctart}` 为 `\documentclass[twoside]{ctexart}`
 
-改 `%\input astyle` 为 `\input{ASTYLE.CTX}`
+改 `\input astyle` 为 `\input{ASTYLE.CTX}`
 
 用 `pdflatex` 编译，保持源文件 `GBK` 编码
