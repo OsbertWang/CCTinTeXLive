@@ -1,0 +1,197 @@
+%作者只需进行对应部分的覆盖即可.
+
+%\documentclass[twoside]{cctart}
+\documentclass[twoside]{ctexart}
+\def\nkyear{2017}
+\def\nksno{0001}
+\def\nkvol{38}
+\def\nkno{1}
+\def\cnkno{1}
+\def\totalpage{06}
+\def\firstpage{001}
+\def\lastpage{6}
+\setcounter{page}{\firstpage}
+\def\shorttitle{\songti 论文缩略题目}
+\def\shortauthor{\songti 张三三 \quad 李五五}
+\def\correction{4}
+%\input astyle
+\input{ASTYLE.CTX}
+
+\title{\LARGE \bf \heiti \zihao{3} \boldmath \ziju{0.3} \vspace*{-1cm}
+论文题目*}
+
+\author{\large \fangsong \zihao{4} \ziju{0.3} 张三三$^{1}$\quad 李五五$^{2}$}
+
+\date{}
+
+\begin{document}
+
+\baselineskip 5mm
+\parindent 2\ccwd
+\abovedisplayskip=4pt plus 1pt minus 1pt \abovedisplayshortskip=4pt
+plus 1pt minus 1pt \belowdisplayskip=4pt plus 1pt minus 1pt
+\belowdisplayshortskip=4pt plus 1pt minus 1pt \vspace{-1cm}
+
+\maketitle
+
+\thispagestyle{first}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\footnotetext{\hspace*{-5mm} \zihao{6}
+\begin{tabular}{@{}r@{}p{13.0cm}@{}}
+& 本文2016年10月6日收到, 2017年1月8日收到修改稿. \\
+$^{1}$ & 第一作者单位, 湖南　湘潭 411105. E-mail: 1@163.com \\
+$^{2}$ & 第二作者单位, 南京 210000. E-mail: 2@126.com \\
+$^{*}$ & 国家自然科学基金 (No.10000000) 资助的项目.
+\end{tabular}}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\vspace*{-5mm}
+
+\begin{quotation}
+{\footnotesize \zihao{6} \nd {\heiti 提要}\ \ 论文提要.
+
+\vskip 2mm
+
+\nd \begin{tabular}{@{}l@{ }p{10.1cm}}
+{\heiti 关键词}\ \ & 关键词一, 关键二, 关键词三 \\
+\multicolumn{2}{@{}l}{{\bf \heiti MR (2000) 主题分类}\ \ 22E46，22E47} \\
+\multicolumn{2}{@{}l}{{\heiti 中图法分类}\ \ O175.29} \\
+\multicolumn{2}{@{}l}{{\heiti 文献标志码}\ \ A} \\
+\multicolumn{2}{@{}l}{{\heiti 文章编号}\ \
+1000-8314(\nkyear)0\nkno-0\firstpage-\totalpage}
+\end{tabular}
+} \end{quotation}
+
+\vskip 5mm
+
+\Section{引　言} \label{section 1}
+
+众所周知
+
+\Subsection{小标题1}
+
+以下
+
+\Subsection{小标题2}
+
+以下
+
+\Section{一般} \label{section 2}
+
+以下
+
+\begin{thm}  % or 直接采用 {\heiti\bf 定理2.1}\ \ 设....
+定理样式 $A$.
+\end{thm}
+
+\begin{thm}
+定理样式 $A$.
+\end{thm}
+
+\pr 定理的证明.
+
+\begin{thm}
+定理样式 $B$.
+\end{thm}
+
+\bh{定理A} 其他定理格式.
+
+\bh{定理A的证明} 其他类型的定理证明格式.
+
+\begin{defi}
+定义样式 $A$.
+\end{defi}
+
+\Section{一般} \label{section 3}
+
+以下$^{\!\zihao{6}\text{[1] 定理 1.1}}$
+
+\begin{thm}$^{\hspace*{-3mm}\zihao{6}\text{[1] 定理 1.1}}$\ \ 定理样式 $C$.
+\end{thm}
+
+\begin{thm}
+定理样式 $D$.
+\end{thm}
+
+\begin{defi}
+定义样式 $B$.
+\end{defi}
+
+\Section{一般} \label{section 4}
+
+以下
+
+
+
+\bigskip
+
+{\heiti 致谢}\ \ 感谢.
+
+\begin{thebibliography}{aa}
+% 期刊文章格式
+\bibitem{1} 施武杰. 元的阶给定的有限群 [J]. {\kaishu 科学通报}, 1997,
+42(16):1703--1706.
+\bibitem{2} Ma Jipang, Pu Xin. Inveres of operators between Banach spaces and
+local conjugacy theorem [J]. {\it Chin Ann Math}, 1999,
+20B(1):57--62.
+% 专著格式
+\bibitem{3} 秦元勋, 王联. 带有时滞的动力系统的运动和稳定性 [M].
+北京: 科学出版社, 1989.
+\bibitem{4}  Nashed M Z. Generalized inverses and applications [M].
+New York: Academic Press, 1976:1--5.
+% 学位论文格式
+\bibitem{5} 史东华. 柔性结构控制中的几个问题 [D]. 北京: 中国科学院系统科
+学研究所, 1999.
+% 会议论文集
+\bibitem{6} 张三. 论文题目 [C]\xgw 编者. 论文集名. 北京:
+出版社, 2000:81--85.
+\bibitem{7} Berkes I. Results and problems related to the pointwise
+central limit theorem [M]\xgw Szyszkowicz B (ed). Asymptotic Methods
+in Probability and Statistics. Amsterdam: Elsevier, 1998:59--96.
+% 预印本
+\bibitem{8} 隋允康, 王希诚. DDDU(2)程序原理和结构的简要说明 [R]. 大连:
+大连工学院工程力学研究所, 1984.
+\end{thebibliography}
+
+\vskip 5mm
+
+\begin{center}{\bf \Large \boldmath \baselineskip 7mm
+Paper Title
+
+} \end{center}
+
+\vskip 1mm
+
+\centerline{ZHANG Sansan$^{1}$\quad LI Wuwu$^{2}$}
+
+\vskip 1mm
+
+\begin{center}
+\begin{tabular}{@{}r@{}p{12cm}@{}}
+$^{1}$ & Department of Mathematics, Xiangtan University,
+Xiangtan 411105, Hunan, China. E-mail: 1@163.com \\
+$^{2}$ & Department of Mathematics, Nanjing University,
+Nanjing 210000, China.\\
+& E-mail: 2@126.com
+\end{tabular}
+\end{center}
+
+\vskip 3mm
+
+\nd {\bf Abstract } English version of the abstract here.
+
+\vskip 3mm
+
+\begin{tabular}{@{}l@{ }p{10.1cm}}
+{\bf Keywords}\ \ & Quadratic Lie superalgebra, Centroid \\
+\multicolumn{2}{@{}l}{{\bf 2000 MR Subject Classification}\ \ 22E46,
+22E47}
+\end{tabular}
+\vskip 3mm
+
+
+
+
+\end{document}

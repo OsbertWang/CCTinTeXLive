@@ -1,0 +1,360 @@
+\usepackage{cchead}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsbsy}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[twoside]{geometry}
+\geometry{papersize={18.8cm,26cm}}
+\textwidth 14cm
+\textheight 21cm
+\topmargin -6mm
+\oddsidemargin -1.5mm
+\evensidemargin -1.5mm
+\headsep 4mm
+\footskip 11mm
+\doublerulesep 0.3pt
+\numberwithin{equation}{section}
+\catcode`@=11
+\def\ps@nk{\def\@oddhead{\vbox{\hbox to \hsize{\pic \footnotesize \songti \zihao{6} \rm \nkno\ ÆÚ \hfill \shortauthor
+\qquad \shorttitle \hfill \thepage} \vspace{1mm} \hrule \vspace*{-2mm}}}
+\def\@evenhead{\vbox{\hbox to \hsize{\pic \footnotesize \rm \thepage \hfill \songti \zihao{6} \ziju{1} ÊýÑ§Äê¿¯
+\hfill \nkvol\ ¾íA¼­} \vspace{1mm} \hrule \vspace*{-2mm}}}
+\def\@oddfoot{} \def\@evenfoot{}}
+\def\ps@first{\def\@oddhead{\vbox{\vspace*{-5mm}
+\hbox to \hsize{\pic \songti \zihao{6} \ziju{1} \hskip -2.2mm ÊýÑ§Äê¿¯ \hfill} \vspace{1mm}
+\hbox to \hsize{\footnotesize \rm \nkyear, \nkvol A(\nkno):\thepage--\lastpage \hfill} \vspace{1mm}
+\hbox to \hsize{\footnotesize \rm DOI: 10.16205/j.cnki.cama.\nkyear.\nksno \hfill} \break}}
+\def\@evenhead{\vbox{\vspace*{-5mm}
+\hbox to \hsize{\pic \songti \zihao{6} \ziju{1} ÊýÑ§Äê¿¯ \hfill} \vspace{1mm}
+\hbox to \hsize{\footnotesize \rm {\bf \nkvol A:}\nkno(\nkyear),\thepage--\lastpage. \hfill} \break}}
+\def\@oddfoot{} \def\@evenfoot{}}
+\def\Section#1{\Sec{#1} \setcounter{equation}{0} \vspace*{-5mm} \indent}
+\def\Sec{\@Startsection{section}{1}{\z@}
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries\boldmath\heiti\zihao{-4}\ziju{0.3}}} % czj
+\def\@Startsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@ifstar
+    {\@ssect{#3}{#4}{#5}{#6}}%
+    {\@dblarg{\@Sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+\def\@Sect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\large \@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #6{%
+          \@hangfrom{\hskip #3\relax\@svsec \hskip -1mm}%
+          \interlinepenalty \@M #8\@@par}
+    \endgroup
+    \csname #1mark\endcsname{#7}%
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec #8}%
+      \csname #1mark\endcsname{#7}%
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+\def\Subsection#1{\Subsec{#1} \vspace*{-6mm} \indent}
+\def\Subsec{\@StartSubsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\bfseries\boldmath\heiti}}
+\def\@StartSubsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@ifstar
+    {\@ssect{#3}{#4}{#5}{#6}}%
+    {\@dblarg{\@SubSect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+\def\@SubSect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #6{%
+          \@hangfrom{\hskip #3\relax\@svsec\hskip -1.5mm}%
+          \interlinepenalty \@M #8\@@par}
+    \endgroup
+    \csname #1mark\endcsname{#7}%
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec #8}%
+      \csname #1mark\endcsname{#7}%
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+\def\list#1#2{\ifnum \@listdepth >5\relax \@toodeep \else \global
+\advance \@listdepth\@ne \fi \rightmargin \z@ \listparindent\z@
+\itemindent\z@ \csname @list\romannumeral\the\@listdepth\endcsname
+\def\@itemlabel{#1}\let\makelabel\@mklab \@nmbrlistfalse #2\relax
+\@trivlist \parskip 0pt \parindent\listparindent \advance \linewidth
+-\rightmargin \advance\linewidth -\leftmargin \advance\@totalleftmargin
+\leftmargin \parshape \@ne \@totalleftmargin \linewidth \ignorespaces}
+\catcode`@=12
+\pagestyle{nk}
+\newtheoremstyle{thm}{2mm}{2mm}{}{\parindent}{\rm \songti}{}{1\ccwd}{}
+\theoremstyle{thm}
+\newtheorem{thm}{\bf {\heiti ¶¨Àí}}[section]
+\newtheorem{lem}{\bf {\heiti ÒýÀí}}[section]
+\newtheorem{coro}{\bf {\heiti ÍÆÂÛ}}[section]
+\newtheorem{rem}{\bf {\heiti ×¢}}[section]
+\newtheorem{defi}{\bf {\heiti ¶¨Òå}}[section]
+\newtheorem{prop}{\bf {\heiti ÃüÌâ}}[section]
+\newtheorem{eg}{\bf {\heiti Àý}}[section]
+\newtheorem{prb}{\bf {\heiti ÎÊÌâ}}[section]
+\newtheorem{clm}{\bf {\heiti ¶ÏÑÔ}}[section]
+\def\pr{{\heiti Ö¤\ \ }}
+\def\bh#1{{\bf \heiti #1\ \ }}
+\def\sa#1{& \!\!\!\! #1 \!\!\!\! &}
+\newsavebox{\mygraphic}
+\def\figno{correction\correction}
+%\sbox{\mygraphic}{\includegraphics[scale=1.8]{\figno.ps}}
+\sbox{\mygraphic}{\includegraphics[scale=1.8]{\figno.pdf}}
+\def\pic{\begin{picture}(0,0) \put(-210,-1250){\usebox{\mygraphic}} \end{picture}}
+\def\thebibliography#1{\vspace*{-3mm}
+\section*{\centerline{\heiti \zihao{-4} \ziju{0.3} ²Î¡¡¿¼¡¡ÎÄ¡¡Ï×}}
+\list{[\arabic{enumi}]} {\settowidth \labelwidth{[#1]} \leftmargin
+\labelwidth \advance \leftmargin \labelsep \usecounter{enumi}}
+\def\newblock{\hskip .11em plus .33em minus .07em} \sloppy \clubpenalty
+4000 \widowpenalty 4000 \sfcode`\.=1000 \relax}
+\def\thln{\hline \hline \hline}
+\def\vs{\vskip 2mm}
+\def\xg{/\!/\ }
+\def\xgw{/\!/}
+\def\al{\alpha}
+\def\be{\beta}
+\def\ga{\gamma}
+\def\de{\delta}
+\def\ep{\epsilon}
+\def\ve{\varepsilon}
+\def\ze{\zeta}
+\def\th{\theta}
+\def\vt{\vartheta}
+\def\ka{\kappa}
+\def\la{\lambda}
+\def\si{\sigma}
+\def\up{\upsilon}
+\def\vp{\varphi}
+\def\om{\omega}
+\def\Ga{\Gamma}
+\def\De{\Delta}
+\def\Th{\Theta}
+\def\La{\Lambda}
+\def\Si{\Sigma}
+\def\Om{\Omega}
+\def\f#1#2{\frac{#1}{#2}}
+\def\pa{\partial}
+\def\es{\emptyset}
+\def\nb{\nabla}
+\def\eq{\equiv}
+\def\bs{\backslash}
+\def\ov{\overline}
+\def\ud{\underline}
+\def\lal{\langle}
+\def\ral{\rangle}
+\def\wt{\widetilde}
+\def\wh{\widehat}
+\def\nd{\noindent}
+\def\ds{\displaystyle}
+\def\pda#1#2{\f{\pa #1}{\pa #2}}
+\def\nn{\nonumber}
+\def\BA{\mathbb{A}}
+\def\BB{\mathbb{B}}
+\def\BC{\mathbb{C}}
+\def\BD{\mathbb{D}}
+\def\BE{\mathbb{E}}
+\def\BF{\mathbb{F}}
+\def\BG{\mathbb{G}}
+\def\BH{\mathbb{H}}
+\def\BI{\mathbb{I}}
+\def\BJ{\mathbb{J}}
+\def\BK{\mathbb{K}}
+\def\BL{\mathbb{L}}
+\def\BM{\mathbb{M}}
+\def\BN{\mathbb{N}}
+\def\BO{\mathbb{O}}
+\def\BP{\mathbb{P}}
+\def\BQ{\mathbb{Q}}
+\def\BR{\mathbb{R}}
+\def\BS{\mathbb{S}}
+\def\BT{\mathbb{T}}
+\def\BU{\mathbb{U}}
+\def\BV{\mathbb{V}}
+\def\BW{\mathbb{W}}
+\def\BX{\mathbb{X}}
+\def\BY{\mathbb{Y}}
+\def\BZ{\mathbb{Z}}
+\def\cA{{\cal A}}
+\def\cB{{\cal B}}
+\def\cC{{\cal C}}
+\def\cD{{\cal D}}
+\def\cE{{\cal E}}
+\def\cF{{\cal F}}
+\def\cG{{\cal G}}
+\def\cH{{\cal H}}
+\def\cI{{\cal I}}
+\def\cJ{{\cal J}}
+\def\cK{{\cal K}}
+\def\cL{{\cal L}}
+\def\cM{{\cal M}}
+\def\cN{{\cal N}}
+\def\cO{{\cal O}}
+\def\cP{{\cal P}}
+\def\cQ{{\cal Q}}
+\def\cR{{\cal R}}
+\def\cS{{\cal S}}
+\def\cT{{\cal T}}
+\def\cU{{\cal U}}
+\def\cV{{\cal V}}
+\def\cW{{\cal W}}
+\def\cX{{\cal X}}
+\def\cY{{\cal Y}}
+\def\cZ{{\cal Z}}
+\def\rmd{\mathrm{d}}
+\def\rme{\mathrm{e}}
+\def\rmi{\mathrm{i}}
+\def\rmT{\mathrm{T}}
+\def\HA{\text{\boldmath{$A$}}}
+\def\HB{\text{\boldmath{$B$}}}
+\def\HC{\text{\boldmath{$C$}}}
+\def\HD{\text{\boldmath{$D$}}}
+\def\HE{\text{\boldmath{$E$}}}
+\def\HF{\text{\boldmath{$F$}}}
+\def\HG{\text{\boldmath{$G$}}}
+\def\HH{\text{\boldmath{$H$}}}
+\def\HI{\text{\boldmath{$I$}}}
+\def\HJ{\text{\boldmath{$J$}}}
+\def\HK{\text{\boldmath{$K$}}}
+\def\HL{\text{\boldmath{$L$}}}
+\def\HM{\text{\boldmath{$M$}}}
+\def\HN{\text{\boldmath{$N$}}}
+\def\HO{\text{\boldmath{$O$}}}
+\def\HP{\text{\boldmath{$P$}}}
+\def\HQ{\text{\boldmath{$Q$}}}
+\def\HR{\text{\boldmath{$R$}}}
+\def\HS{\text{\boldmath{$S$}}}
+\def\HT{\text{\boldmath{$T$}}}
+\def\HU{\text{\boldmath{$U$}}}
+\def\HV{\text{\boldmath{$V$}}}
+\def\HW{\text{\boldmath{$W$}}}
+\def\HX{\text{\boldmath{$X$}}}
+\def\HY{\text{\boldmath{$Y$}}}
+\def\HZ{\text{\boldmath{$Z$}}}
+\def\rHA{\mathbf{A}}
+\def\rHB{\mathbf{B}}
+\def\rHC{\mathbf{C}}
+\def\rHD{\mathbf{D}}
+\def\rHE{\mathbf{E}}
+\def\rHF{\mathbf{F}}
+\def\rHG{\mathbf{G}}
+\def\rHH{\mathbf{H}}
+\def\rHI{\mathbf{I}}
+\def\rHJ{\mathbf{J}}
+\def\rHK{\mathbf{K}}
+\def\rHL{\mathbf{L}}
+\def\rHM{\mathbf{M}}
+\def\rHN{\mathbf{N}}
+\def\rHO{\mathbf{O}}
+\def\rHP{\mathbf{P}}
+\def\rHQ{\mathbf{Q}}
+\def\rHR{\mathbf{R}}
+\def\rHS{\mathbf{S}}
+\def\rHT{\mathbf{T}}
+\def\rHU{\mathbf{U}}
+\def\rHV{\mathbf{V}}
+\def\rHW{\mathbf{W}}
+\def\rHX{\mathbf{X}}
+\def\rHY{\mathbf{Y}}
+\def\rHZ{\mathbf{Z}}
+\catcode`@=11
+\def\rad{\mathop{\operator@font ad}\nolimits}
+\def\rae{\mathop{\operator@font a.e.}\nolimits}
+\def\ras{\mathop{\operator@font a.s.}\nolimits}
+\def\rdef{\mathop{\operator@font def}\nolimits}
+\def\rdiag{\mathop{\operator@font diag}\nolimits}
+\def\rdist{\mathop{\operator@font dist}\nolimits}
+\def\rgrad{\mathop{\operator@font grad}\nolimits}
+\def\rid{\mathop{\operator@font id}\nolimits}
+\def\rloc{\mathop{\operator@font loc}\nolimits}
+\def\rmod{\mathop{\operator@font mod }\nolimits}
+\def\rrank{\mathop{\operator@font rank}\nolimits}
+\def\rspan{\mathop{\operator@font span}\nolimits}
+\def\rstr{\mathop{\operator@font str}\nolimits}
+\def\rtr{\mathop{\operator@font tr}\nolimits}
+\def\rAut{\mathop{\operator@font Aut}\nolimits}
+\def\rCard{\mathop{\operator@font Card}\nolimits}
+\def\rEnd{\mathop{\operator@font End}\nolimits}
+\def\rFP{\mathop{\operator@font FP}\nolimits}
+\def\rIdem{\mathop{\operator@font Idem}\nolimits}
+\def\rIm{\mathop{\operator@font Im}\nolimits}
+\def\rProj{\mathop{\operator@font Proj}\nolimits}
+\def\rRe{\mathop{\operator@font Re}\nolimits}
+\def\rRic{\mathop{\operator@font Ric}\nolimits}
+\catcode`@=12
+\def\addno{\addtocounter{equation}{1}}
+\def\no{(\theequation)}
+\def\seteqn#1#2{\setcounter{section}{#1} \setcounter{equation}{#2}}
+\def\ct#1{\mbox{\rm \footnotesize \cite{#1}}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+\endinput
+
